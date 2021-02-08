@@ -1,11 +1,7 @@
-#### React Router Fix
+# React project
 
-(Fix)[https://dev.to/dance2die/page-not-found-on-netlify-with-react-router-58mc]
+This project applies React Router, useCallback, useRef, useContext, useEffect, useState, fetch API to search a cocktail by name.
 
-#### CRA Fix
+# Demo:
 
-```
-
-"build": "CI= react-scripts build",
-
-```
+https://meogencocktails.netlify.app/

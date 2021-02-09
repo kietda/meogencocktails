@@ -1,7 +1,9 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useCallback } from "react";
 
-const url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
+const url1 = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
+const url2 =
+  "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail";
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
@@ -9,13 +11,16 @@ const AppProvider = ({ children }) => {
 
   // for component loading and serach cocktails
   const [loading, setLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState("a");
+  const [searchTerm, setSearchTerm] = useState("");
   const [cocktails, setCocktails] = useState([]);
 
   const fetchDrinks = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await fetch(`${url}${searchTerm}`);
+      const response = searchTerm
+        ? await fetch(`${url1}${searchTerm}`)
+        : await fetch(`${url2}`);
+
       const data = await response.json();
       const { drinks } = data;
       if (drinks) {

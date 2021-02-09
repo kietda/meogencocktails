@@ -1,6 +1,7 @@
 import React from "react";
 import Loading from "../components/Loading";
 import { useParams, Link } from "react-router-dom";
+
 const url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
 
 const SingleCocktail = () => {
@@ -71,6 +72,7 @@ const SingleCocktail = () => {
     instructions,
     ingredients,
   } = cocktail;
+
   return (
     <section className="section cocktail-section">
       <Link to="/" className="btn btn-primary">
@@ -78,7 +80,9 @@ const SingleCocktail = () => {
       </Link>
       <h2 className="section-title"> {name}</h2>
       <div className="drink">
-        <img src={image} alt={name} />
+        <div className="animate__animated animate__fadeInLeft">
+          <img src={image} alt={name} />
+        </div>
         <div className="drink-info">
           <p>
             <span className="drink-data"> name :</span>

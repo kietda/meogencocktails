@@ -177,7 +177,7 @@ Navbar
 .nav-expand {
   border-bottom: 2px solid var(--primaryColor);
   box-shadow: var(--lightShadow);
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
   z-index: 100;
 }
